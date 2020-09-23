@@ -1,7 +1,8 @@
 <template lang="pug">
     #app
         Navbar
-        view-router
+        .container
+            router-view
 </template>
 
 <script lang="ts">
@@ -14,8 +15,11 @@ import Navbar from './components/Navbar.vue'
         Navbar
     }
 })
-export default class App extends Vue{
-
-}
+export default class App extends Vue{}
 </script>
 
+<style scoped>
+    .container{
+        margin-top: 20px;
+    }
+</style>
