@@ -23,3 +23,9 @@ export default class App extends Vue{}
         margin-top: 20px;
     }
 </style>
+
+<style>
+    html{
+        background-color: whitesmoke !important;
+    }
+</style>
