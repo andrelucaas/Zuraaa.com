@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Index from '../views/Index.vue'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 Vue.use(VueRouter)
 

@@ -1,5 +1,5 @@
 <template lang="pug">
-    nav.navbar(role="navgation" aria-label="main-navigation")
+    nav.navbar(role="navgation" aria-label="main-navigation" :class="{'tranparent': isScroll}")
         .container
             .navbar-brand
                 a.navbar-item(href="#/")
@@ -33,10 +33,24 @@ import Component from 'vue-class-component'
 @Component
 export default class Navbar extends Vue{
     private isCompact = false
+    private isScroll = false
+
+    private created(){
+        window.addEventListener("scroll", this.onScroll)
+    }
 
     private switchCompact(){
         this.isCompact = !this.isCompact
     }
+
+    private onScroll(){
+        if(window.scrollY > 18){
+            this.isScroll = true
+        }else{
+            this.isScroll = false
+        }
+    }
+
 }
 </script>
 
@@ -44,11 +58,18 @@ export default class Navbar extends Vue{
     .navbar{
         background-color: #490e2d;
         box-shadow: 0 4px #710f4b;
+        position: sticky;
+        top: 0;
     }
 
         .navbar-burger > span {
             color: white;
         }
+
+    .tranparent {
+        background-color: rgb(0, 0, 0, 0.7);
+        transition-duration: 500ms;
+    }
 
     .navbar-item{
         color: white;

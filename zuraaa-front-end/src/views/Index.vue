@@ -1,12 +1,40 @@
 <template lang="pug">
-    BotCard
+    .index
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+        BotCard
+
 </template>
 
 
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import BotCard from '../components/BotCard.vue'
+import BotCard from '../components/generic-itens/BotCard.vue'
 
 
 @Component({
@@ -14,5 +42,14 @@ import BotCard from '../components/BotCard.vue'
         BotCard
     }
 })
-export default class Index extends Vue{}
+export default class Index extends Vue{
+}
 </script>
+
+<style scoped>
+    .index{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+</style>
