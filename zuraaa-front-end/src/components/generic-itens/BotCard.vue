@@ -4,10 +4,10 @@
             .avatar
                 i.fas.fa-expand-alt
         .details
-            p.heading(title="Tags") Economia | ??? Servidores | ??? Votos
             p.title.is-size-4(title="Kurosawa Diaaaaaa")
                 img(title="Online" src="../../assets/imgs/icons/online.png")
                 | Kurosawa Diaaaaaaa
+            p.heading(title="Tags") Economia | ??? Servidores | ??? Votos
             p.subtitle.is-size-6(title="Descrição") Daora man kkkk Daora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkkDaora man kkkk
             .links
                 TagButtons(title="Página")
@@ -87,6 +87,8 @@ export default class BotCard extends Vue {
                         transition-property: var(--durarion);
                     }
 
+
+
     .details{
         margin-left: 10px;
         display: flex;
@@ -95,15 +97,21 @@ export default class BotCard extends Vue {
         overflow: auto;
     }
 
+
         .details > .title{
             align-items: center;
             display: flex;
+            margin-bottom: 3px;
         }
 
             .details > .title > img {
                 width: 26px;
                 min-width: 26px;
             }
+
+        .details > .heading{
+            margin-bottom: 20px;
+        }
 
         .details > .subtitle {
             overflow: scroll;
@@ -114,7 +122,6 @@ export default class BotCard extends Vue {
         }
 
         .details > .links{
-            align-self: flex-end;
             margin-top: 5px;
         }
 </style>
