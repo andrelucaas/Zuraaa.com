@@ -1,6 +1,7 @@
 node_modules
 /.code
 config.json
+out
 
 # local env files
 .env.local
