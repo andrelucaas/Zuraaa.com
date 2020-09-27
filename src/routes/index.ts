@@ -1,14 +1,11 @@
 import {Express} from 'express'
+import Mongo from '../database'
 
-import mongo from '../database'
 
+import initial from './initial'
 
-export default (app: Express): Express => {
-    app.get('/', async (req, res) => {
-        const db = mongo()
-
-        res.send(await db.users.findById('268526982222970880').exec())
-    })
+export default (app: Express, db: Mongo): Express => {
+    app.use('/', initial(db))
 
     return app
 }

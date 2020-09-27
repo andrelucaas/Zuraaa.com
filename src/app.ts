@@ -9,6 +9,7 @@ import helmet from 'helmet'
 import config from './config.json'
 
 import router from './routes'
+import Mongo from './database'
 
 
 const ConfiguretedMongoSession = mongoSession(session)
@@ -19,7 +20,12 @@ const storageSession = new ConfiguretedMongoSession({
     collection: 'usersession'
 })
 
-const app = router(express())
+
+const db = new Mongo()
+const app = router(express(), db)
+
+app.set('view engine', 'pug');
+
 
 const configuredHelmet = helmet({
     referrerPolicy: {

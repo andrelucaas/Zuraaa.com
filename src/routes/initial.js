@@ -10,16 +10,19 @@ module.exports = (mongo) => {
     res.render('index', {
       title: 'Início',
       bots: {
-        top: (await mongo.Bots.find(filter).limit(6).sort({"votes.current": -1})).map(partialBotObject),
-        recent: (await mongo.Bots.find(filter).limit(6).sort({"dates.sent": -1})).map(partialBotObject),
-        random: (await mongo.Bots.aggregate([{$match: filter}, {$sample: {size: 12}}])).map(partialBotObject)
+        top: (await mongo.bots.find(filter).limit(6).sort({"votes.current": -1})).map(partialBotObject),
+        recent: (await mongo.bots.find(filter).limit(6).sort({"dates.sent": -1})).map(partialBotObject),
+        random: (await mongo.bots.aggregate([{$match: filter}, {$sample: {size: 12}}])).map(partialBotObject)
       },
       tags,
       colors
   })});
   
   router.get("/userdata", (req, res) => {
-    res.send(req.session.user)
+    if(req.session)
+      res.send(req.session.user)
+    else
+      res.sendStatus(404)
   });
   return router;
 };
